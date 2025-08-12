@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Links</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+      max-width: 100vw;
+    }
+    html, body {
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      scrollbar-width: none;
+      background: linear-gradient(135deg, #141e30, #243b55);
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      min-height: 100vh;
+      position: relative;
+      z-index: 10;
+    }
+    body::-webkit-scrollbar {
+      display: none;
+    }
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background: transparent;
+      overflow: hidden;
+    }
+    .navbar {
+      position: sticky;
+      top: 0;
+      padding: 8px 2%;
+      background: rgba(255 255 255 / 0.08);
+      backdrop-filter: saturate(180%) blur(16px);
+      -webkit-backdrop-filter: saturate(180%) blur(16px);
+      z-index: 20;
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+    .navbar a {
+      color: #e0e0e0;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 10px 16px;
+      margin: 0 4px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .navbar a:hover {
+      background-color: rgba(161, 123, 224, 0.25);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .navbar a[href="links.html"] {
+      background-color: rgba(161, 123, 224, 0.15);
+      color: #d1bcf2;
+    }
+    .container {
+      position: relative;
+      z-index: 10;
+      background: rgba(255 255 255 / 0.07);
+      backdrop-filter: saturate(180%) blur(16px);
+      border-radius: 28px;
+      padding: 48px 36px 24px 36px;
+      width: 360px;
+      max-width: 90vw;
+      box-shadow: 0 16px 48px rgb(0 0 0 / 0.5), inset 0 0 1px rgb(255 255 255 / 0.3);
+      text-align: center;
+      margin: 24px auto 48px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      text-shadow: 0 0 12px rgb(118 75 162 / 0.6);
+    }
+    h1 a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease, text-shadow 0.3s ease;
+    }
+    h1 a:hover {
+      color: #a17be0;
+      text-shadow: 0 0 20px #a17be0;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-bottom: 32px;
+      flex-grow: 1;
+    }
+    a.link {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 16px 24px;
+      border-radius: 18px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      background: linear-gradient(90deg, #764ba2, #667eea);
+      box-shadow: 0 0 12px rgb(118 75 162 / 0.7), 0 8px 18px rgb(118 75 162 / 0.3);
+      transition: background-position 0.6s ease, box-shadow 0.3s ease, transform 0.2s ease, color 0.3s ease;
+      background-size: 200% 200%;
+      background-position: left center;
+    }
+    a.link:hover {
+      background-position: right center;
+      box-shadow: 0 0 24px #a17be0, 0 12px 32px #a17be0;
+      color: #f4eefa;
+      transform: scale(1.06);
+    }
+    footer {
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: rgba(255 255 255 / 0.4);
+      margin-top: 24px;
+      padding: 0;
+      background: transparent;
+      box-shadow: none;
+      position: static;
+      z-index: 10;
+      user-select: none;
+    }
+    @media (max-width: 480px) {
+      .container {
+        width: 90vw;
+        padding: 32px 24px 16px 24px;
+      }
+      a.link {
+        font-size: 1.1rem;
+        padding: 14px 20px;
+        gap: 14px;
+      }
+      .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px 0;
+      }
+      .navbar a {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <nav class="navbar">
+    <a href="home.html">Home</a>
+    <a href="links.html">Links</a>
+    <a href="about.html">About Me</a>
+    <a href="other.html">Other</a>
+  </nav>
+  <div class="container">
+    <h1><a href="https://boxadmin1.github.io/website/" target="_blank" rel="noopener">My Links</a></h1>
+    <div class="links">
+      <a href="https://boxadmin1.github.io/website/" target="_blank" rel="noopener" class="link">Website</a>
+      <a href="https://discord.com/users/boxadmin1" target="_blank" rel="noopener" class="link">Discord</a>
+      <a href="https://x.com/Evan71480710582" target="_blank" rel="noopener" class="link">Twitter</a>
+      <a href="https://github.com/boxadmin1" target="_blank" rel="noopener" class="link">GitHub</a>
+    </div>
+    <footer>Jesus Christ Loves You!</footer>
+  </div>
+  <script>
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    const particles = [];
+    const PARTICLE_COUNT = 70;
+    let mouseX = null;
+    let mouseY = null;
+    function random(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = random(0, width);
+        this.y = random(0, height);
+        this.size = random(1, 3);
+        this.speedX = random(-0.3, 0.3);
+        this.speedY = random(-0.3, 0.3);
+        this.alpha = random(0.1, 0.5);
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (mouseX !== null && mouseY !== null) {
+          let dx = mouseX - this.x;
+          let dy = mouseY - this.y;
+          let dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 150) {
+            this.x += dx * 0.01;
+            this.y += dy * 0.01;
+          }
+        }
+        if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) {
+          this.reset();
+        }
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
+        ctx.fill();
+      }
+    }
+    function init() {
+      resize();
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+      }
+      animate();
+    }
+    function resize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+    }
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animate);
+    }
+    window.addEventListener('resize', resize);
+    window.addEventListener('mousemove', e => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    init();
+  </script>
+</body>
+</html>

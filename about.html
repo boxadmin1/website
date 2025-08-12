@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About Me</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+html, body {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #eee;
+  overflow-y: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 12px 2%;
+  background: rgba(255 255 255 / 0.08);
+  backdrop-filter: saturate(180%) blur(16px);
+  -webkit-backdrop-filter: saturate(180%) blur(16px);
+  z-index: 20;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar a {
+  color: #ccc;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 16px;
+  margin: 0 6px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+  font-size: 1rem;
+}
+.navbar a:hover {
+  background-color: rgba(161, 123, 224, 0.25);
+  color: #fff;
+  transform: translateY(-2px);
+}
+.navbar a[href="about.html"] {
+  background-color: rgba(161, 123, 224, 0.15);
+  color: #d1bcf2;
+}
+main {
+  position: relative;
+  z-index: 10;
+  max-width: 720px;
+  margin: 70px auto 60px auto;
+  padding: 0 24px 40px 24px;
+  text-align: left;
+}
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  margin-bottom: 12px;
+  text-shadow: 0 0 16px rgba(161, 123, 224, 0.7);
+  text-align: center;
+}
+section {
+  margin-bottom: 40px;
+}
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #bfa8ff;
+  margin-bottom: 14px;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 10px rgba(161, 123, 224, 0.5);
+  border-bottom: 2px solid rgba(161, 123, 224, 0.3);
+  padding-bottom: 6px;
+}
+p {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #d3cfff;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  user-select: text;
+}
+ul {
+  list-style-type: disc;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  color: #ccc;
+  line-height: 1.6;
+}
+ul li {
+  margin-bottom: 8px;
+}
+.note {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #bbb;
+  max-width: 480px;
+  margin: 20px auto 0 auto;
+  line-height: 1.5;
+  text-align: center;
+}
+a.simple-link {
+  font-weight: 700;
+  color: #a17be0;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+a.simple-link:hover {
+  color: #764ba2;
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255 255 255 / 0.3);
+  margin-bottom: 28px;
+  user-select: none;
+  font-weight: 400;
+}
+@media (max-width: 720px) {
+  main {
+    margin: 60px auto 50px auto;
+    padding: 0 16px 30px 16px;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  p, ul li {
+    font-size: 1rem;
+  }
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+  <a href="home.html">Home</a>
+  <a href="links.html">Links</a>
+  <a href="about.html">About Me</a>
+  <a href="other.html">Other</a>
+</nav>
+<main>
+  <div class="title">About Me</div>
+
+  <section>
+    <h2>Electrical Engineering & Programming</h2>
+    <p>
+      I specialize in electrical engineering with a focus on analog and digital electronics.  
+      I program microcontrollers primarily in C++ and MicroPython.
+    </p>
+  </section>
+
+  <section>
+    <h2>Software & Web Development</h2>
+    <p>
+      I'm familiar with HTML, CSS, JavaScript, and Python for web projects.  
+      I also use C# with Unity for game development and have experience with Android app development using Android Studio.
+    </p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <p>
+      I have worked on various projects, but my favorite is a large robotic quadruped that I built myself.  
+      It's bigger than Boston Dynamics' Spot and showcases a combination of hardware engineering and software programming skills.
+    </p>
+  </section>
+
+  <section>
+    <h2>Hobbies & Interests</h2>
+    <ul>
+      <li>Electrical Engineering & Programming</li>
+      <li>Building and upgrading PCs</li>
+      <li>Game development with Unity and C#</li>
+      <li>Exploring microcontrollers and embedded systems</li>
+      <li>Learning new programming languages and tools</li>
+      <li>Web development and designing responsive user interfaces</li>
+    </ul>
+  </section>
+
+  <div class="note">Feel free to explore my <a href="links.html" class="simple-link">Links</a> page for projects, social profiles, and more.</div>
+</main>
+<footer>Jesus Christ Loves You!</footer>
+</body>
+</html>
