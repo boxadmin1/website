@@ -76,28 +76,39 @@ body::-webkit-scrollbar-thumb { background: #a17be0; border-radius: 10px; }
 
 main {
   max-width: 1000px;
-  margin: 30px auto;
+  margin: 40px auto;
   padding: 0 24px;
 }
 
-/* Common Card Styles */
-.bubble-card, .featured-card {
+/* Page Titles */
+h1.page-title {
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(to right, #fff, #a17be0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 0.8s ease both;
+}
+
+/* Generic Card Styles (Rounded & Glassy) */
+.bubble-card {
   position: relative;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   margin-bottom: 40px;
-  backdrop-filter: blur(4px);
-  transition: all 0.4s ease;
+  backdrop-filter: blur(8px);
+  padding: 35px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease;
   will-change: transform;
 }
 
-.bubble-card:hover, .featured-card:hover {
-  transform: translate3d(0, -8px, 0) scale(1.01);
+.bubble-card:hover {
+  transform: translate3d(0, -8px, 0);
   border-color: rgba(161, 123, 224, 0.4);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .float-wrapper {
@@ -111,5 +122,5 @@ footer {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: 0.05em;
-  animation: fadeInUp 1s ease both 1.2s;
+  animation: fadeInUp 1s ease both 1s;
 }
