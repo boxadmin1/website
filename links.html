@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Links | Evan</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #141e30, #243b55); color: #fff; min-height: 100vh; overflow-x: hidden; }
+    #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .navbar { position: sticky; top: 0; padding: 12px 2%; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); z-index: 100; display: flex; justify-content: center; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); }
+    .navbar a { color: #ccc; font-weight: 600; text-decoration: none; padding: 10px 18px; margin: 0 5px; border-radius: 8px; transition: 0.3s; font-size: 0.9rem; }
+    .navbar a:hover { background: rgba(161, 123, 224, 0.2); color: #fff; }
+    .navbar a[href="links.html"] { background: rgba(161, 123, 224, 0.25); color: #d1bcf2; }
+    .container { position: relative; z-index: 10; background: rgba(255, 255, 255, 0.03); border-radius: 28px; padding: 48px 36px; width: 400px; max-width: 90vw; box-shadow: 0 16px 48px rgba(0,0,0,0.4); border: 1px solid rgba(255, 255, 255, 0.08); text-align: center; margin: 80px auto; }
+    h1 { font-size: 2.5rem; letter-spacing: 0.1em; margin-bottom: 30px; background: linear-gradient(to right, #fff, #a17be0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .links { display: flex; flex-direction: column; gap: 15px; }
+    a.link { display: block; padding: 16px; border-radius: 15px; font-size: 1.1rem; font-weight: 600; color: #fff; text-decoration: none; background: rgba(161, 123, 224, 0.1); border: 1px solid rgba(161, 123, 224, 0.2); transition: 0.3s; }
+    a.link:hover { background: rgba(161, 123, 224, 0.3); border-color: #a17be0; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(161, 123, 224, 0.2); }
+    footer { margin-top: 30px; font-size: 0.8rem; color: rgba(255,255,255,0.2); }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+  <nav class="navbar"><a href="home.html">Home</a><a href="links.html">Links</a><a href="about.html">About Me</a><a href="other.html">Other</a></nav>
+  <div class="container">
+    <h1>My Links</h1>
+    <div class="links">
+      <a href="https://boxadmin1.github.io/website/" class="link">Website</a>
+      <a href="https://discord.com/users/boxadmin1" class="link">Discord</a>
+      <a href="https://x.com/Nave559692" class="link">Twitter</a>
+      <a href="https://github.com/boxadmin1" class="link">GitHub</a>
+    </div>
+    <footer>JESUS CHRIST LOVES YOU!</footer>
+  </div>
+  <script>
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    const particles = [];
+    function resize() { width = window.innerWidth; height = window.innerHeight; canvas.width = width; canvas.height = height; }
+    class Particle {
+      constructor() { this.reset(); }
+      reset() { this.x = Math.random() * width; this.y = Math.random() * height; this.size = Math.random() * 2; this.speedX = Math.random() * 0.5 - 0.25; this.speedY = Math.random() * 0.5 - 0.25; this.alpha = Math.random() * 0.5; }
+      update() { this.x += this.speedX; this.y += this.speedY; if (this.x < 0 || this.x > width || this.y < 0 || this.y > height) this.reset(); }
+      draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = `rgba(255,255,255,${this.alpha})`; ctx.fill(); }
+    }
+    function init() { resize(); for (let i = 0; i < 70; i++) particles.push(new Particle()); animate(); }
+    function animate() { ctx.clearRect(0, 0, width, height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animate); }
+    window.addEventListener('resize', resize);
+    init();
+  </script>
+</body>
+</html>
