@@ -7,7 +7,7 @@
   user-select: none;
 }
 
-/* --- SMOOTH KEYFRAMES --- */
+/* --- SMOOTH ANIMATIONS --- */
 @keyframes glowPulse {
   0% { text-shadow: 0 0 10px rgba(161, 123, 224, 0.2); filter: brightness(1); }
   50% { text-shadow: 0 0 25px rgba(161, 123, 224, 0.6), 0 0 10px rgba(255, 255, 255, 0.3); filter: brightness(1.2); }
@@ -15,7 +15,7 @@
 }
 
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  from { opacity: 0; transform: translate3d(0, 30px, 0); }
   to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
@@ -36,10 +36,8 @@ html, body {
   color: #eee;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  scroll-behavior: smooth;
 }
 
-/* Custom Scrollbar */
 body::-webkit-scrollbar { width: 6px; }
 body::-webkit-scrollbar-track { background: #141e30; }
 body::-webkit-scrollbar-thumb { background: #a17be0; border-radius: 10px; }
@@ -73,7 +71,7 @@ body::-webkit-scrollbar-thumb { background: #a17be0; border-radius: 10px; }
 .navbar a:hover {
   background: rgba(161, 123, 224, 0.2);
   color: #fff;
-  transform: translateY(-2px);
+  transform: translate3d(0, -2px, 0);
 }
 
 main {
@@ -82,18 +80,8 @@ main {
   padding: 0 24px;
 }
 
-h1 {
-  font-size: clamp(2rem, 8vw, 3rem);
-  text-align: center;
-  margin-bottom: 40px;
-  background: linear-gradient(to right, #fff, #a17be0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeInUp 0.8s ease both;
-}
-
-/* Cards & Components */
-.bubble-card, .card, .story-bubble {
+/* Common Card Styles */
+.bubble-card, .featured-card {
   position: relative;
   background: rgba(255, 255, 255, 0.03);
   border-radius: 24px;
@@ -101,15 +89,15 @@ h1 {
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   margin-bottom: 40px;
   backdrop-filter: blur(4px);
-  padding: 35px;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease;
+  transition: all 0.4s ease;
   will-change: transform;
 }
 
-.bubble-card:hover, .card:hover, .story-bubble:hover {
-  transform: translate3d(0, -8px, 0);
+.bubble-card:hover, .featured-card:hover {
+  transform: translate3d(0, -8px, 0) scale(1.01);
   border-color: rgba(161, 123, 224, 0.4);
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .float-wrapper {
@@ -123,5 +111,5 @@ footer {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.3);
   letter-spacing: 0.05em;
-  animation: fadeInUp 1s ease both 1s;
+  animation: fadeInUp 1s ease both 1.2s;
 }
