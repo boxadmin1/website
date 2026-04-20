@@ -4,20 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Me | Evan</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>.navbar a[href="about.html"] { background: rgba(161, 123, 224, 0.25); color: #d1bcf2; }</style>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar a[href="about.html"] { background: rgba(161, 123, 224, 0.25); color: #d1bcf2; }
+    h2 { color: #a17be0; font-size: 1.4rem; margin-bottom: 15px; border-bottom: 1px solid rgba(161, 123, 224, 0.2); padding-bottom: 5px; }
+    p { line-height: 1.7; color: #c9c4d7; font-size: 1.05rem; }
+    .bubble-card:nth-child(2) { animation: fadeInUp 0.8s ease both 0.2s; }
+    .bubble-card:nth-child(3) { animation: fadeInUp 0.8s ease both 0.4s; }
+  </style>
 </head>
 <body>
-<nav class="navbar"><a href="home.html">Home</a><a href="links.html">Links</a><a href="about.html">About Me</a><a href="other.html">Other</a></nav>
+<nav class="navbar">
+  <a href="home.html">Home</a>
+  <a href="links.html">Links</a>
+  <a href="about.html">About Me</a>
+  <a href="other.html">Other</a>
+</nav>
 <main>
-  <h1>About Me</h1>
-  <div class="card" style="animation-delay: 0.2s;">
-    <h2 style="color: #a17be0; margin-bottom: 15px;">Engineering & Code</h2>
-    <p style="line-height: 1.7; color: #c9c4d7;">I specialize in electrical and electromechanical engineering, with a core focus on analog and digital systems. I bridge the gap between software and hardware by programming microcontrollers primarily in C++ and somtimes MicroPython.</p>
+  <h1 class="page-title">About Me</h1>
+  
+  <div class="bubble-card">
+    <h2>Engineering & Code</h2>
+    <p>I specialize in electrical and electromechanical engineering, with a core focus on analog and digital systems. I bridge the gap between software and hardware by programming microcontrollers primarily in C++ and somtimes MicroPython.</p>
   </div>
-  <div class="card" style="animation-delay: 0.4s;">
-    <h2 style="color: #a17be0; margin-bottom: 15px;">Software Stack</h2>
-    <p style="line-height: 1.7; color: #c9c4d7;">Experienced with HTML, CSS, JavaScript, and Python. I use Unity (C#) for games and Android Studio for mobile development.</p>
+  
+  <div class="bubble-card">
+    <h2>Software Stack</h2>
+    <p>Experienced with HTML, CSS, JavaScript, and Python. I use Unity (C#) for games and Android Studio for mobile development.</p>
   </div>
 </main>
 <footer>JESUS CHRIST LOVES YOU!</footer>
