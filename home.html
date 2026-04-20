@@ -1,48 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Home | Evan</title>
-<link rel="stylesheet" href="styles.css">
-<style>
-/* Specific Styles for Home Page Content */
-.navbar a[href="home.html"] { background: rgba(161, 123, 224, 0.25); color: #d1bcf2; }
-
-.hero { text-align: center; margin-bottom: 30px; animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both; }
-.hero-title { font-size: clamp(2.5rem, 10vw, 4.5rem); font-weight: 700; background: linear-gradient(to bottom, #ffffff, #d1bcf2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: glowPulse 3s ease-in-out infinite; display: inline-block; padding: 5px; }
-.username { font-size: 1.1rem; color: rgba(161, 123, 224, 0.8); font-weight: 600; letter-spacing: 0.1em; text-transform: lowercase; margin-top: -5px; animation: fadeInUp 0.8s ease both 0.4s; }
-
-.section-header { text-align: left; margin-bottom: 20px; animation: fadeInUp 0.8s ease both; }
-.section-header h2 { font-size: 1.8rem; color: #fff; display: flex; align-items: center; gap: 12px; }
-.section-header h2::after { content: ''; flex-grow: 1; height: 1px; background: rgba(255,255,255,0.1); }
-
-.welcome-card { padding: 35px 30px; text-align: center; animation: fadeInUp 0.8s ease both 0.2s; }
-.welcome-text { font-size: 1.15rem; line-height: 1.7; color: #c9c4d7; max-width: 800px; margin: 0 auto; }
-.welcome-text strong { color: #fff; font-weight: 600; }
-
-.featured-card { padding: 50px 40px; border: 1px solid rgba(161, 123, 224, 0.3); animation: fadeInUp 0.8s ease both 0.5s; overflow: hidden; }
-.badge { display: inline-block; background: #a17be0; color: #fff; padding: 6px 16px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; box-shadow: 0 0 15px rgba(161, 123, 224, 0.5); }
-.project-title { font-size: 2.2rem; margin-bottom: 15px; color: #fff; }
-.project-desc { font-size: 1.1rem; line-height: 1.8; color: #c9c4d7; max-width: 700px; }
-
-.interests-bubble { padding: 30px; margin-bottom: 50px; animation: fadeInUp 0.8s ease both 0.6s; }
-.interests-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
-.interest-item { background: rgba(255, 255, 255, 0.04); padding: 12px 16px; border-radius: 12px; display: flex; align-items: center; gap: 10px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; animation: fadeInUp 0.5s ease both; }
-.interest-item:hover { background: rgba(161, 123, 224, 0.2); border-color: rgba(161, 123, 224, 0.6); transform: translate3d(0, -5px, 0) scale(1.05); }
-
-/* Interest stagger delays */
-.interest-item:nth-child(1) { animation-delay: 0.70s; }
-.interest-item:nth-child(2) { animation-delay: 0.75s; }
-.interest-item:nth-child(3) { animation-delay: 0.80s; }
-.interest-item:nth-child(4) { animation-delay: 0.85s; }
-.interest-item:nth-child(5) { animation-delay: 0.90s; }
-.interest-item:nth-child(6) { animation-delay: 0.95s; }
-.interest-item:nth-child(7) { animation-delay: 1.00s; }
-.interest-item:nth-child(8) { animation-delay: 1.05s; }
-.interest-item:nth-child(9) { animation-delay: 1.10s; }
-.interest-item:nth-child(10) { animation-delay: 1.15s; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home | Evan</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .navbar a[href="home.html"] { background: rgba(161, 123, 224, 0.25); color: #d1bcf2; }
+    .hero { text-align: center; margin-bottom: 30px; animation: fadeInUp 1s both; }
+    .hero-title { font-size: clamp(2.5rem, 10vw, 4.5rem); font-weight: 700; background: linear-gradient(to bottom, #ffffff, #d1bcf2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: glowPulse 3s infinite; display: inline-block; padding: 5px; }
+    .username { font-size: 1.1rem; color: rgba(161, 123, 224, 0.8); font-weight: 600; text-transform: lowercase; margin-top: -5px; animation: fadeInUp 0.8s both 0.5s; letter-spacing: 0.1em; }
+    .interests-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+    .interest-item { background: rgba(255, 255, 255, 0.04); padding: 12px 16px; border-radius: 12px; display: flex; align-items: center; gap: 10px; border: 1px solid rgba(255, 255, 255, 0.05); transition: 0.3s; animation: fadeInUp 0.5s both; }
+    .interest-item:hover { background: rgba(161, 123, 224, 0.2); transform: translate3d(0, -5px, 0) scale(1.05); }
+    .badge { display: inline-block; background: #a17be0; color: #fff; padding: 6px 16px; border-radius: 100px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 20px; }
+    .section-header { text-align: left; margin-bottom: 20px; animation: fadeInUp 0.8s ease both; }
+    .section-header h2 { font-size: 1.8rem; color: #fff; display: flex; align-items: center; gap: 12px; }
+    .section-header h2::after { content: ''; flex-grow: 1; height: 1px; background: rgba(255,255,255,0.1); }
+  </style>
 </head>
 <body>
 <nav class="navbar">
@@ -54,13 +29,13 @@
 <main>
   <div class="hero">
     <div class="hero-title">Hi, I'm Evan</div>
-    <div class="username">aka boxamdin 1</div>
+    <div class="username">aka boxadmin1</div>
   </div>
-
+  
   <section class="section-header"><h2>Welcome</h2></section>
   <div class="float-wrapper">
-    <div class="bubble-card welcome-card">
-      <p class="welcome-text">
+    <div class="bubble-card welcome-card" style="text-align: center;">
+      <p class="welcome-text" style="font-size: 1.15rem; line-height: 1.7; color: #c9c4d7;">
         Welcome to my portfolio! I specialize in <strong>Electrical Engineering</strong>, 
         <strong>Electro-Mechanical Engineering</strong>, <strong>Electrical Systems</strong>, 
         and <strong>Programming</strong>. I love building complex machines and writing the code that brings them to life.
@@ -69,10 +44,10 @@
   </div>
 
   <section class="section-header" style="animation-delay: 0.3s;"><h2>Primary Project</h2></section>
-  <div class="featured-card">
+  <div class="featured-card" style="padding: 50px 40px;">
     <span class="badge">Most Proud Achievement</span>
-    <h3 class="project-title">Robotic Quadruped</h3>
-    <p class="project-desc">
+    <h3 class="project-title" style="font-size: 2.2rem; margin-bottom: 15px; color: #fff;">Robotic Quadruped</h3>
+    <p class="project-desc" style="font-size: 1.1rem; line-height: 1.8; color: #c9c4d7;">
       A custom-designed, large-scale robotic quadruped built from the ground up. 
       It is significantly larger than the Boston Dynamics Spot, featuring complex 
       electro-mechanical synchronization and custom control software.
