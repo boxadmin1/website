@@ -8,25 +8,22 @@
   <style>
     .navbar a[href="links.html"] { background: rgba(161, 123, 224, 0.25); color: #d1bcf2; }
     #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-    .container { position: relative; z-index: 10; width: 400px; max-width: 90vw; margin: 40px auto; text-align: center; animation: fadeInUp 0.8s ease both 0.2s; }
-    .link-btn { display: block; padding: 16px; margin-bottom: 15px; border-radius: 15px; background: rgba(161, 123, 224, 0.1); border: 1px solid rgba(161, 123, 224, 0.2); color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; animation: fadeInUp 0.5s ease both; }
-    .link-btn:hover { background: rgba(161, 123, 224, 0.3); transform: translate3d(0, -5px, 0); box-shadow: 0 10px 20px rgba(161, 123, 224, 0.2); }
-    .link-btn:nth-child(1) { animation-delay: 0.4s; }
-    .link-btn:nth-child(2) { animation-delay: 0.5s; }
-    .link-btn:nth-child(3) { animation-delay: 0.6s; }
+    .container { position: relative; z-index: 10; width: 400px; max-width: 90vw; margin: 40px auto; text-align: center; }
+    .link { display: block; padding: 16px; margin-bottom: 15px; border-radius: 15px; background: rgba(161, 123, 224, 0.1); border: 1px solid rgba(161, 123, 224, 0.2); color: #fff; text-decoration: none; font-weight: 600; transition: 0.3s; animation: fadeInUp 0.5s both; }
+    .link:hover { background: rgba(161, 123, 224, 0.3); border-color: #a17be0; transform: translate3d(0, -3px, 0); }
   </style>
 </head>
 <body>
   <canvas id="particles"></canvas>
   <nav class="navbar"><a href="home.html">Home</a><a href="links.html">Links</a><a href="about.html">About Me</a><a href="other.html">Other</a></nav>
-  <main class="container">
+  <div class="container">
     <h1>My Links</h1>
-    <a href="https://discord.com/users/boxadmin1" class="link-btn">Discord</a>
-    <a href="https://x.com/Nave559692" class="link-btn">Twitter</a>
-    <a href="https://github.com/boxadmin1" class="link-btn">GitHub</a>
-  </main>
+    <a href="https://boxadmin1.github.io/website/" class="link" style="animation-delay: 0.2s;">Website</a>
+    <a href="https://discord.com/users/boxadmin1" class="link" style="animation-delay: 0.3s;">Discord</a>
+    <a href="https://x.com/Nave559692" class="link" style="animation-delay: 0.4s;">Twitter</a>
+    <a href="https://github.com/boxadmin1" class="link" style="animation-delay: 0.5s;">GitHub</a>
+  </div>
   <script>
-    /* Particle script remains the same as your source */
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     let width, height;
