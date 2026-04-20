@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+/* --- HARDWARE ACCELERATED ANIMATIONS --- */
+@keyframes glowPulse {
+  0% { text-shadow: 0 0 10px rgba(161, 123, 224, 0.2); filter: brightness(1); }
+  50% { text-shadow: 0 0 25px rgba(161, 123, 224, 0.6), 0 0 10px rgba(255, 255, 255, 0.3); filter: brightness(1.2); }
+  100% { text-shadow: 0 0 10px rgba(161, 123, 224, 0.2); filter: brightness(1); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -10px, 0); }
+}
+
+@keyframes slideInDown {
+  from { opacity: 0; transform: translate3d(0, -20px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* --- BASE STYLES --- */
+html, body {
+  min-height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  color: #eee;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+body::-webkit-scrollbar { width: 6px; }
+body::-webkit-scrollbar-track { background: #141e30; }
+body::-webkit-scrollbar-thumb { background: #a17be0; border-radius: 10px; }
+
+/* --- SHARED COMPONENTS --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  padding: 12px 2%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: 100;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  animation: slideInDown 0.6s ease-out both;
+}
+
+.navbar a {
+  color: #ccc;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 10px 18px;
+  margin: 0 5px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.navbar a:hover {
+  background: rgba(161, 123, 224, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 24px;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 3rem);
+  text-align: center;
+  margin-bottom: 40px;
+  background: linear-gradient(to right, #fff, #a17be0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInUp 0.8s ease both;
+}
+
+/* --- CARDS --- */
+.bubble-card, .card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  margin-bottom: 40px;
+  backdrop-filter: blur(4px);
+  padding: 35px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s ease;
+  will-change: transform;
+}
+
+.bubble-card:hover, .card:hover {
+  transform: translate3d(0, -8px, 0);
+  border-color: rgba(161, 123, 224, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.float-wrapper {
+  animation: float 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+footer {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+  animation: fadeInUp 1s ease both 1s;
+}
